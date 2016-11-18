@@ -1,0 +1,15 @@
+<div id="main">
+<input type='text' size="60" ng-model="searchquery"></input>
+<br />
+</div>
+<table>
+	<td ng-repeat="q in posts" class="tablerow">
+		<div><a href={{q.link}}><h3>{{q.title}}</h3></a></div>
+		<div ng-repeat="ma in q.major_actions" class="majoractions">
+			<p class="date">{{ma[0].substr(ma[0].indexOf('(')+6,4).split(',').join('/').split(' ').join('')}}{{ma[0].split(',')[2].substr(1)+'/'}}{{ma[0].substr(ma[0].indexOf('(')+1,4)}}</p>
+			<p class="action">{{ma[2]}}</p>
+		</div> 
+		
+	</td>
+
+</table> 
